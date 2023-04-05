@@ -23,6 +23,9 @@ export default function Hero({}: Props) {
             className='relative rounded-full h-32 w-32 mx-auto object-cover' 
             src='https://i.imgur.com/HIkbNGX.png' 
             alt='' />
+        <div>
+            
+        </div>
 
         <h1>
             <span>{text}</span>
