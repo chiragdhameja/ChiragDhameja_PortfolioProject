@@ -28,4 +28,5 @@ function Skill({directionLeft}: Props) {
   )
 }
 
+
 export default Skill
