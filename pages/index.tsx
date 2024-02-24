@@ -1,13 +1,14 @@
-import Head from 'next/head'
-import type { NextPage } from 'next'
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Experience from '@/components/Experience'
-import Skills from '@/components/Skills'
-import Projects from '@/components/Projects'
-import ContactMe from '@/components/ContactMe'
-import Link from 'next/link'
+import Head from 'next/head';
+import type { GetStaticProps, NextPage } from 'next';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Experience from '@/components/Experience';
+import Skills from '@/components/Skills';
+import Projects from '@/components/Projects';
+import ContactMe from '@/components/ContactMe';
+import Link from 'next/link';
+import { Props } from 'next/script';
 
 
 const Home: NextPage = () => {
@@ -67,3 +68,7 @@ const Home: NextPage = () => {
 }
 
 export default Home;
+
+//export const getStaticProps: GetStaticProps<Props> = async() => {
+
+//}
