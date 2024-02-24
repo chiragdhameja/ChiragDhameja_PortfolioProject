@@ -28,23 +28,16 @@ export default function Header({socials}: Props) {
 
         className='flex flex-row items-center'>
             {/* Social Icons */}
-            <SocialIcon 
-            url="https://twitter.com/chirag_dhameja"
-            fgColor='gray'
-            bgColor='transparent'
-            />
-            {/* Social Icons */}
-            <SocialIcon 
-            url="https://twitter.com/chirag_dhameja"
-            fgColor='gray'
-            bgColor='transparent'
-            />
-            {/* Social Icons */}
-            <SocialIcon 
-            url="https://twitter.com/chirag_dhameja"
-            fgColor='gray'
-            bgColor='transparent'
-            />
+
+            {socials.map((social) => (
+                <SocialIcon 
+                key={social._id}
+                url={social.url}
+                fgColor='gray'
+                bgColor='transparent'
+                />
+            )) }
+            
         </motion.div>
         
         <Link href='#contact' legacyBehavior>

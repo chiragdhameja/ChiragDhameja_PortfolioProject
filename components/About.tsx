@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { PageInfo } from '@/typings'
+import { urlFor } from '@/sanity'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-export default function About({ }: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{opacity: 0}}
@@ -23,7 +27,7 @@ export default function About({ }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ x: 0, opacity: 1, }}
         viewport={{ once: true }}
-        src='https://i.imgur.com/EBC4VaD.png'
+        src={urlFor(pageInfo?.profilePic).url()}
         className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
             md-rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
       // https://youtu.be/urgi2iz9P6U?t=4803
@@ -34,7 +38,7 @@ export default function About({ }: Props) {
           little</span> background
         </h4>
         <p className='text-base'>
-          A tech Savvy guy with interests in Computer networking, Web Development and Video games! Looking forward to getting employed at a technology centered organization for which I would be able to take part and contribute to various projects.
+          {pageInfo?.backgroundInformation}
         </p>
 
       </div>

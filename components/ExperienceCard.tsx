@@ -1,9 +1,13 @@
+import { urlFor } from '@/sanity';
+import { Experience } from '@/typings'
 import { motion } from 'framer-motion'
 import React from 'react'
 
-type Props = {}
+type Props = {
+  experience: Experience;
+}
 
-function ExperienceCard({ }: Props) {
+function ExperienceCard({ experience}: Props) {
   return (
     <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
       <motion.img
@@ -19,29 +23,20 @@ function ExperienceCard({ }: Props) {
         viewport={{ once: true }}
 
         className='w-32 h-32 rounded-full xl:w-[250px] xl:h-[200px] object-cover object-center'
-        src='https://i.imgur.com/eWiWDKA.jpeg'
+        src={urlFor(experience.companyImage).url()}
       />
 
       <div className='px-0 md:px-10'>
         <h1 className='text-3xl font-light'>Web Developer: Internship Associate</h1>
         <p className='font-bold text-:2xl mt-1'>The Entreprunership Network</p>
         <div className='flex space-x-2 my-2'>
-          <img
-            className='h-10 w-10 rounded-full'
-            src='https://i.imgur.com/frGwXTz.png'
-          />
-          <img
-            className='h-10 w-10 rounded-full'
-            src='https://i.imgur.com/sdXtbbY.png'
-          />
-          <img
-            className='h-10 w-10 rounded-full'
-            src='https://i.imgur.com/iV9if91.png'
-          />
-          <img
-            className='h-10 w-10 rounded-full'
-            src='https://i.imgur.com/a2HPODi.png'
-          />
+          {experience.technologies.map(technology => (
+            <img
+              key={technology._id}
+              className='h-10 w-10 rounded-full'
+              src={urlFor(technology.image).url()}
+            />
+          ))}
 
         </div>
         <p className='py-3 text-gray-500'>May 2021 - July 2021</p>
