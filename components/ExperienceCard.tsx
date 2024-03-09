@@ -1,5 +1,6 @@
 import { urlFor } from '@/sanity';
 import { Experience } from '@/typings'
+import exp from 'constants';
 import { motion } from 'framer-motion'
 import React from 'react'
 
@@ -27,8 +28,12 @@ function ExperienceCard({ experience}: Props) {
       />
 
       <div className='px-0 md:px-10'>
-        <h1 className='text-3xl font-light'>Web Developer: Internship Associate</h1>
-        <p className='font-bold text-:2xl mt-1'>The Entreprunership Network</p>
+        <h1 className='text-3xl font-light'>
+          {experience.jobTitle}
+        </h1>
+        <p className='font-bold text-:2xl mt-1'>
+          {experience.company}
+        </p>
         <div className='flex space-x-2 my-2'>
           {experience.technologies.map(technology => (
             <img
@@ -39,12 +44,18 @@ function ExperienceCard({ experience}: Props) {
           ))}
 
         </div>
-        <p className='py-3 text-gray-500'>May 2021 - July 2021</p>
+        <p className='py-3 text-gray-500'>
+          {new Date(experience.dateStarted).toDateString()} -{" "}
+          {experience.isCurrentlyWorkingHere
+          ? "Present"
+          : new Date(experience.dateEnded).toDateString()}
+        </p>
 
         <ul className='list-disc space-y-4 ml-5 text-lg'>
-          <li>Worked with Wix Web Development team</li>
-          <li>Managed Bootstrap and Wordpress modules</li>
-          <li>Attended several workshops for hands-on CSS editing</li>
+          {experience.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+          
         </ul>
 
       </div>
