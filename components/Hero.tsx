@@ -18,6 +18,7 @@ export default function Hero({pageInfo}: Props) {
             "But loves gaming more ;)",
             "Can't even deny <CODING>"
             ],
+
             loop: true,
             delaySpeed: 1800,
     });
@@ -26,7 +27,7 @@ export default function Hero({pageInfo}: Props) {
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <BackgroundCircles />
         <img 
-            className='relative rounded-full h-32 w-32 mx-auto object-cover' 
+            className='relative rounded-full h-36 w-36 mx-auto object-cover' 
             src={urlFor(pageInfo?.heroImage).url()}
             alt='' />
         <div className='z-20'>
@@ -35,23 +36,23 @@ export default function Hero({pageInfo}: Props) {
             </h2>
         
 
-            <h1 className='text-4xl lg:text-5xl font-semibold px-10'>
+            <h1 className='text-4xl lg:text-4xl font-semibold px-10 text-gray-600'>
                 <span>{text}</span>
-                <Cursor cursorColor='Purple' />
+                <Cursor cursorStyle='|' cursorColor='Purple' />
             </h1>
 
             <div className='pt-5'>
                 <Link href="#about">
-                    <button className='heroButton'>About</button>
+                    <button className='heroButton bg-[rgb(36,36,36)]'>About</button>
                 </Link>
                 <Link href="#experience">
-                <button className='heroButton'>Experience</button>
+                <button className='heroButton bg-[rgb(36,36,36)]'>Experience</button>
                 </Link>
                 <Link href="#skills">
-                <button className='heroButton'>Skills</button>
+                <button className='heroButton bg-[rgb(36,36,36)]'>Skills</button>
                 </Link>
                 <Link href="#projects">
-                <button className='heroButton'>Projects</button>  
+                <button className='heroButton bg-[rgb(36,36,36)]'>Projects</button>  
                 </Link>         
             </div>
         </div>
