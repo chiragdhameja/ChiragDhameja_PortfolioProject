@@ -23,11 +23,11 @@ type Props = {
   socials: Social[];
 }
 
-const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
+export default function Home ({pageInfo, experiences, projects, skills, socials}: Props) {
   return (
     <div className='bg-[#F4FBFD] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/50 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
-        <title>{pageInfo?.name} - Portfolio</title>
+        <title>{`${pageInfo?.name} - Portfolio`}</title>
       </Head>
       
       <Header socials={socials} />
@@ -75,9 +75,9 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
   
 }
 
-export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+
+export const getServerSideProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfos();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
@@ -91,7 +91,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       projects,
       socials,
+      revalidate: 10,
     },
-    revalidate: 20,
+    
   }
+
 }
