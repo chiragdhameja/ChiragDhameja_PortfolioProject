@@ -25,7 +25,7 @@ type Props = {
 
 export default function Home ({pageInfo, experiences, projects, skills, socials}: Props) {
   return (
-    <div className='bg-[#F4FBFD] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/50 scrollbar-thumb-[#F7AB0A]/80'>
+    <div className='bg-purple-5 text-purple-8 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/50 scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
         <title>{`${pageInfo?.name} - Portfolio`}</title>
       </Head>
@@ -60,12 +60,12 @@ export default function Home ({pageInfo, experiences, projects, skills, socials}
         <ContactMe />
       </section>
     
-      <footer className='sticky bottom-5 w-full cursor-pointer'>
+      <footer className='sticky bottom-5 w-full'>
           <div className='flex items-center justify-center'>
             <Link href='#hero'>
-              <h5 className='font-semibold text-sm opacity-30 hover:opacity-80'>
+              <h5 className='font-semibold text-sm opacity-30 hover:opacity-80 cursor-pointer'>
                 Designed & Developed by {" "}
-                <span className='decoration-[#F7AB0A]/50 underline'>Chirag Dhameja</span>
+                <span className='decoration-purple-9 underline'>Chirag Dhameja</span>
               </h5>
             </Link>
           </div>         

@@ -31,28 +31,28 @@ export default function Hero({pageInfo}: Props) {
             src={urlFor(pageInfo?.heroImage).url()}
             alt='' />
         <div className='z-20'>
-            <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[5px]'>
+            <h2 className='text-sm uppercase font-semibold text-purple-9 pb-2 tracking-[5px]'>
                 {pageInfo?.role}
             </h2>
         
 
-            <h1 className='text-4xl lg:text-4xl font-semibold px-10 text-gray-600'>
+            <h1 className='text-4xl lg:text-4xl font-semibold px-10 text-purple-9'>
                 <span>{text}</span>
-                <Cursor cursorStyle='|' cursorColor='Purple' />
+                <Cursor cursorStyle='|' cursorColor='#9067C6' />
             </h1>
 
-            <div className='pt-5'>
-                <Link href="#about">
-                    <button className='heroButton bg-[rgb(36,36,36)]'>About</button>
+            <div className=' pt-5 font-semibold'>
+                <Link href="#about" className='pl-2'>
+                    <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>About</button>
                 </Link>
-                <Link href="#experience">
-                <button className='heroButton bg-[rgb(36,36,36)]'>Experience</button>
+                <Link href="#experience" className='pl-2'>
+                <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>Experience</button>
                 </Link>
-                <Link href="#skills">
-                <button className='heroButton bg-[rgb(36,36,36)]'>Skills</button>
+                <Link href="#skills" className='pl-2'>
+                <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>Skills</button>
                 </Link>
-                <Link href="#projects">
-                <button className='heroButton bg-[rgb(36,36,36)]'>Projects</button>  
+                <Link href="#projects" className='pl-2'>
+                <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>Projects</button>  
                 </Link>         
             </div>
         </div>
