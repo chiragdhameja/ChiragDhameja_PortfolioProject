@@ -25,7 +25,7 @@ type Props = {
 
 export default function Home ({pageInfo, experiences, projects, skills, socials}: Props) {
   return (
-    <div className='bg-purple-5 text-purple-8 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/50 scrollbar-thumb-[#F7AB0A]/80'>
+    <div className='bg-purple-5 text-purple-8 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-purple-6 scrollbar-thumb-purple-7'>
       <Head>
         <title>{`${pageInfo?.name} - Portfolio`}</title>
       </Head>
