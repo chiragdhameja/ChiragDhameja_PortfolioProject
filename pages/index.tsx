@@ -61,7 +61,7 @@ export default function Home ({pageInfo, experiences, projects, skills, socials}
       </section>
     
       <footer className='sticky bottom-5 w-full'>
-          <div className='flex items-center justify-center'>
+          <div className='flex items-center justify-center z-10'>
             <Link href='#hero'>
               <h5 className='font-semibold text-sm opacity-30 hover:opacity-80 cursor-pointer'>
                 Designed & Developed by {" "}
