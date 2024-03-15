@@ -1,6 +1,7 @@
 import { urlFor } from '@/sanity';
 import { Project } from '@/typings';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import React from 'react'
 
 type Props = {
@@ -35,9 +36,11 @@ function Projects({projects}: Props) {
                   src={urlFor(project?.image).url()} alt='' />
                 
                 <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
-                  <h4 className='text-4xl font-semibold text-center text-purple-9'>
-                  {project?.title}
-                  </h4>
+                  <Link href={project?.linkToBuild}>
+                    <h4 className='text-4xl font-semibold text-center text-purple-9'>
+                    {project?.title}
+                    </h4>
+                  </Link>
                   
                   <div className='flex items-center space-x-2 justify-center'>
                     {project?.technologies.map(technology => (
