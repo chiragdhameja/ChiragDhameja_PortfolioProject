@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cursor, Typewriter, useTypewriter } from 'react-simple-typewriter'
+import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles';
 import Link from 'next/link';
 import { PageInfo } from '@/typings';
@@ -16,7 +16,7 @@ export default function Hero({pageInfo}: Props) {
             `Hi, The Name's ${pageInfo?.name}`, 
             "A Guy who loves Coffee",
             "But loves gaming more ;)",
-            "Can't even deny <CODING>"
+            "Can't even deny <CODING/>"
             ],
 
             loop: true,

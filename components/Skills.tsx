@@ -20,7 +20,7 @@ function Skills({skills}: Props) {
         </h3>
         <h3 className='absolute top-36 uppercase tracking-[3px] text-purple-9 text-sm'>Hover skills for proficiency</h3>
 
-        <div className='grid grid-cols-4 gap-5 max-h-fit'>
+        <div className='grid grid-cols-3 sm:grid-cols-4 gap-5 h-96 md:h-auto sm:max-h-fit mb-10 z-40'>
           {skills?.slice(0, 8).map((skill) => (
             <Skill key={skill._id} skill={skill} />
           ))}
