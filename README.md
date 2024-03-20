@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+Personal Portfolio Website Project:
+
+This repository contains the code for my personal portfolio website project. The website is built using TypeScript, React, Node.js, and Tailwind CSS. The data is managed using Sanity as the database. The project is deployed on Vercel.
+
 
 ## Getting Started
 
