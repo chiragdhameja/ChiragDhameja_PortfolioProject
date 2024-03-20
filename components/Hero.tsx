@@ -1,4 +1,5 @@
 import React from 'react'
+import { Analytics } from '@vercel/analytics/react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles';
 import Link from 'next/link';
@@ -58,6 +59,8 @@ export default function Hero({pageInfo}: Props) {
                     <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>Projects</button>  
                 </Link>         
         </div>
+        <Analytics />
     </div>
+    
   );
 }   
