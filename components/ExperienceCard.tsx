@@ -10,7 +10,7 @@ type Props = {
 
 function ExperienceCard({ experience}: Props) {
   return (
-    <article className='flex flex-col rounded-lg items-center mt-5 sm:mt-10 space-y-5 flex-shrink-0 border border-purple-7 h-[550px] w-[300px] sm:h-[650px] sm:w-[400px] md:h-[650px] md:w-[500px] lg:h-[650px] lg:w-[500px] xl:h-[650px] xl:w-[500px] snap-center snap-mandatory bg-base-100 p-4 md:p-5 cursor-pointer transition-opacity duration-200 overflow-y-auto snap-x z-20'>
+    <article className='flex flex-col rounded-lg items-center mt-5 sm:mt-10 space-y-5 flex-shrink-0 border-2 border-purple-7 h-[450px] w-[250px] xs:w-[300px] mob:h-[550px] mob:w-[300px] sm:h-[600px] sm:w-[400px] md:h-[650px] md:w-[500px] lg:h-[650px] lg:w-[500px] xl:h-[650px] xl:w-[500px] snap-center snap-mandatory bg-base-100 p-4 md:p-5 cursor-pointer transition-opacity duration-200 overflow-y-auto scrollbar-thin snap-x z-20'>
       <motion.img
         initial={{
           y: -100,
@@ -28,10 +28,10 @@ function ExperienceCard({ experience}: Props) {
       />
 
       <div className='px-0 md:px-10'>
-        <h1 className='text-3xl font-normal'>
+        <h1 className='text-lg mob:text-2xl font-normal'>
           {experience.jobTitle}
         </h1>
-        <p className='font-bold text-:2xl mt-1'>
+        <p className='text-sm sm:text-lg font-bold my-1'>
           {experience.company}
         </p>
         <div className='flex space-x-2 my-2'>
@@ -45,7 +45,7 @@ function ExperienceCard({ experience}: Props) {
           ))}
 
         </div>
-        <p className='py-3 text-purple-9'>
+        <p className='py-2 mob:py-3 text-purple-9 text-sm'>
           {new Date(experience.dateStarted).toDateString()} -{" "}
           {experience.isCurrentlyWorkingHere
           ? "Present"

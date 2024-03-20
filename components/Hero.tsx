@@ -32,7 +32,7 @@ export default function Hero({pageInfo}: Props) {
             src={urlFor(pageInfo?.heroImage).url()}
             alt='' />
         <div className='z-20'>
-            <h2 className='text-sm uppercase font-semibold text-purple-9 pb-2 tracking-[3px] md:tracking-[5px]'>
+            <h2 className='text-xs sm:text-sm uppercase font-semibold text-purple-9 pb-2 tracking-[3px] md:tracking-[5px]'>
                 {pageInfo?.role}
             </h2>
         
