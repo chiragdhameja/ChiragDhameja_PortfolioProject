@@ -1,66 +1,69 @@
 import React from 'react'
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
-import BackgroundCircles from './BackgroundCircles';
-import Link from 'next/link';
-import { PageInfo } from '@/typings';
-import { urlFor } from '@/sanity';
+import BackgroundCircles from './BackgroundCircles'
+import Link from 'next/link'
+import { PageInfo } from '@/typings'
+import { urlFor } from '@/sanity'
 
 type Props = {
-    pageInfo: PageInfo
+	pageInfo: PageInfo
 }
 
-export default function Hero({pageInfo}: Props) {
+export default function Hero({ pageInfo }: Props) {
+	const [text, count] = useTypewriter({
+		words: [
+			`Hi, The Name's ${pageInfo?.name}`,
+			'A Guy who loves Coffee',
+			'But loves gaming more ;)',
+			"Can't even deny <CODING/>",
+		],
 
-    const[text, count] = useTypewriter({
-        words: [
-            `Hi, The Name's ${pageInfo?.name}`, 
-            "A Guy who loves Coffee",
-            "But loves gaming more ;)",
-            "Can't even deny <CODING/>"
-            ],
+		loop: true,
+		delaySpeed: 1800,
+	})
 
-            loop: true,
-            delaySpeed: 1800,
-    });
+	return (
+		<div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+			<BackgroundCircles />
+			<img
+				className="relative rounded-full h-28 w-28 md:h-36 md:w-36 mx-auto object-cover"
+				src={urlFor(pageInfo?.heroImage).url()}
+				alt=""
+			/>
+			<div className="z-20 min-h-24">
+				<h2 className="text-[0.55rem] xs:text-[0.7rem] sm:text-sm uppercase font-semibold text-purple-9 pb-2 tracking-[3px] md:tracking-[5px]">
+					{pageInfo?.role}
+				</h2>
 
-  return (
-    <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
-        <BackgroundCircles />
-        <img 
-            className='relative rounded-full h-36 w-36 mx-auto object-cover' 
-            src={urlFor(pageInfo?.heroImage).url()}
-            alt='' />
-        <div className='z-20'>
-            <h2 className='text-xs sm:text-sm uppercase font-semibold text-purple-9 pb-2 tracking-[3px] md:tracking-[5px]'>
-                {pageInfo?.role}
-            </h2>
-        
+				<h1 className="text-lg lg:text-4xl md:text-2xl font-semibold px-10 text-purple-9">
+					<span>{text}</span>
+					<Cursor cursorStyle="|" cursorColor="#9067C6" />
+				</h1>
+			</div>
 
-            <h1 className='text-lg lg:text-4xl md:text-2xl font-semibold px-10 text-purple-9'>
-                <span>{text}</span>
-                <Cursor cursorStyle='|' cursorColor='#9067C6' />
-            </h1>
+			<div className="flex flex-col md:flex-row md:pt-6  z-10 font-semibold">
+				<div className="flex flex-row  justify-center py-2 md:py-0">
+					<Link href="#about" className="px-1">
+						<button className="heroButton">About</button>
+					</Link>
+				</div>
+				<div className="flex flex-row">
+					<Link href="#experience" className="px-1">
+						<button className="heroButton">Experience</button>
+					</Link>
+					<Link href="#projects" className="px-1">
+						<button className="heroButton">Projects</button>
+					</Link>
+				</div>
+				<div className="flex flex-row justify-center py-2 md:py-0">
+					<Link href="#skills" className="px-1">
+						<button className="heroButton">Skills</button>
+					</Link>
+				</div>
+			</div>
 
-            
-        </div>
-
-        <div className='grid grid-cols-2 md:-space-x-5 md:grid-cols-4 gap-5 p-5 pt-3 z-10 font-semibold'>
-                <Link href="#about" className='pl-2'>
-                    <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>About</button>
-                </Link>
-                <Link href="#experience" className='pl-2'>
-                    <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>Experience</button>
-                </Link>
-                <Link href="#skills" className='pl-2'>
-                    <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>Skills</button>
-                </Link>
-                <Link href="#projects" className='pl-2'>
-                    <button className='heroButton bg-transparent border-solid border-2 border-purple-950 text-purple-9'>Projects</button>  
-                </Link>         
-        </div>
-        <Analytics />
-    </div>
-    
-  );
-}   
+			<Analytics />
+		</div>
+	)
+}
