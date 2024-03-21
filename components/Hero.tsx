@@ -36,7 +36,7 @@ export default function Hero({ pageInfo }: Props) {
 					{pageInfo?.role}
 				</h2>
 
-				<h1 className="text-lg lg:text-4xl md:text-2xl font-semibold px-10 text-purple-9">
+				<h1 className="text-lg lg:text-4xl md:text-2xl font-semibold px-5 text-purple-9">
 					<span>{text}</span>
 					<Cursor cursorStyle="|" cursorColor="#9067C6" />
 				</h1>
