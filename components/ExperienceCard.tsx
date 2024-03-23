@@ -1,6 +1,5 @@
 import { urlFor } from '@/sanity'
 import { Experience } from '@/typings'
-import exp from 'constants'
 import { motion } from 'framer-motion'
 import React from 'react'
 
@@ -17,7 +16,7 @@ function ExperienceCard({ experience }: Props) {
 				border-2 border-purple-7 
 				h-[450px] mob:h-[550px] sm:h-[600px] md:h-[650px]
 				w-[250px] xs:w-[300px] sm:w-[400px]  md:w-[500px] 
-				snap-center snap-mandatory snap-x  scrollbar-thin
+				scrollbar-thin
 				bg-base-100 cursor-pointer transition-opacity duration-200
 			"
 		>
