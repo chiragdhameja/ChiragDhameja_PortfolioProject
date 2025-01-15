@@ -9,6 +9,7 @@ import ContactMe from '@/components/ContactMe'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import { Props } from '.'
+import { urlFor } from '@/sanity'
 
 export default function Home({
 	pageInfo,
@@ -19,10 +20,24 @@ export default function Home({
 }: Props) {
 	return (
 		<>
+			<meta
+				property="og:image"
+				content={urlFor(pageInfo?.profilePic).url()}
+			/>
 			<NextSeo
 				title="Chirag's portfolio"
 				description="Chirag Dhameja is a Software Engineer"
 				canonical="https://chiragdhameja.dev"
+				openGraph={{
+					images: [
+						{
+							url: urlFor(pageInfo?.profilePic).url(),
+							width: 800,
+							height: 800,
+							alt: 'Thumbnail image',
+						},
+					],
+				}}
 			/>
 			<div className="bg-purple-5 text-purple-8 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-purple-6 scrollbar-thumb-purple-7">
 				<Head>
